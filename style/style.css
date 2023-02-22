@@ -100,8 +100,8 @@ main {
 
 .img-container picture img {
     border-radius: .4rem;
-    border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .info-container {
@@ -174,6 +174,11 @@ main {
         max-width: 540px;
     }
     .img-container::after {
+        border-radius: 0;
+        border-top-right-radius: .4rem;
+        border-bottom-right-radius: .4rem;
+    }
+    .img-container picture img {
         border-radius: 0;
         border-top-right-radius: .4rem;
         border-bottom-right-radius: .4rem;
