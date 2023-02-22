@@ -1,0 +1,214 @@
+/* css reset from joshwcomeau.com */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+:root {
+    --clr-bg-100: #fff;
+    --clr-bg-900: #000;
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #000;
+    --clr-neutral-1: rgba(255, 255, 255, .75);
+    --clr-neutral-2: rgba(255, 255, 255, .6);
+    --clr-primary-1: #090B1A;
+    --clr-primary-2: #1B1938;
+    --clr-primary-3: #AA5BDB;
+    --font-normal: 400;
+    --font-bold: 700;
+    --font-fam-inter: 'Inter', sans-serif;
+    --font-fam-lexdec: 'Lexend Deca', sans-serif;
+}
+
+body {
+    background: var(--clr-primary-1);
+    padding: 6.5rem 1.3rem;
+}
+
+main {
+    border-radius: .4rem;
+    background: var(--clr-primary-2);
+    max-width: 375px;
+    max-height: 1000px;
+    margin: 0 auto;
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-primary-3);
+    opacity: .5;
+    border-radius: .4rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.img-container picture img {
+    border-radius: .4rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.info-container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    padding: 1.6rem 2rem;
+}
+
+.info-container .para {
+    font-family: var(--font-fam-inter);
+}
+
+.para h1 {
+    font-size: 1.8rem;
+    color: var(--clr-neutral-100);
+    font-weight: var(--font-bold);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.para h1 span {
+    color: var(--clr-primary-3);
+}
+
+.para p {
+    font-size: .9375rem;
+    color: var(--clr-neutral-2);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.stats {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+}
+
+.stats h1 {
+    font-size: 1.4rem;
+    font-family: var(--font-fam-inter);
+    font-weight: var(--font-bold);
+    color: var(--clr-neutral-100);
+}
+
+.stats p {
+    font-size: .9375rem;
+    font-family: var(--font-fam-lexdec);
+    color: var(--clr-neutral-2);
+    letter-spacing: 2px;
+}
+
+@media screen and (min-width: 1120px) {
+    body {
+        display: grid;
+        place-content: center;
+    }
+    main {
+        max-width: 1080px;
+        max-height: 892px;
+    }
+    .container {
+        display: flex;
+        flex-flow: row-reverse nowrap;
+    }
+    .img-container {
+        max-width: 540px;
+    }
+    .img-container::after {
+        border-radius: 0;
+        border-top-right-radius: .4rem;
+        border-bottom-right-radius: .4rem;
+    }
+    .info-container {
+        max-width: 540px;
+        max-height: 892px;
+        padding: 2rem 4rem 0 4rem;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-content: center;
+    }
+    .para {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+    }
+    .para h1 {
+        font-size: 2.25rem;
+        text-align: left;
+    }
+    .para p {
+        text-align: left;
+        max-inline-size: 37ch;
+    }
+    .stats {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-end;
+        text-align: justify;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+    .stats p {
+        font-size: .6rem;
+    }
+}
